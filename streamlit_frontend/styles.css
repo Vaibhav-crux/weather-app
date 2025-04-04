@@ -1,0 +1,23 @@
+.title {
+    font-size: 36px;
+    color: #2c3e50;
+    text-align: center;
+}
+.weather-box {
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+.metric-label {
+    font-size: 18px;
+    color: #7f8c8d;
+}
+.metric-value {
+    font-size: 24px;
+    color: #34495e;
+}
+.error {
+    color: #e74c3c;
+    text-align: center;
+}

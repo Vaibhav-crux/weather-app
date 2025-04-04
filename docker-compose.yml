@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    ports:
+      - "8000:8000"
+    environment:
+      - ENVIRONMENT=production
+      - PORT=8000
+      - WEATHER_API_URL=http://backend:8000/api/v1/getCurrentWeather
+      - API_KEY=${API_KEY}  # Loaded from .env file
+    volumes:
+      - ./app:/app  # For development; remove in production
+    networks:
+      - weather-network
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    ports:
+      - "8501:8501"
+    environment:
+      - WEATHER_API_URL=http://backend:8000/api/v1/getCurrentWeather
+    depends_on:
+      - backend
+    volumes:
+      - ./streamlit_frontend:/app  # For development; remove in production
+    networks:
+      - weather-network
+
+networks:
+  weather-network:
+    driver: bridge

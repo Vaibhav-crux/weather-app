@@ -121,6 +121,44 @@ If you prefer running without Docker:
 2. Enter a city name (e.g., "Bengaluru") in the "City Name" field.
 3. Click "Get Weather" to see the current temperature, latitude, longitude, and city name.
 
+## API Examples
+
+### JSON Response
+- **Request**:
+  ```json
+  {
+      "city": "Bengaluru",
+      "output_format": "json"
+  }
+  ```
+- **Response**:
+  ```json
+  {
+      "Weather": "23.1 C",
+      "Latitude": "12.9833",
+      "Longitude": "77.5833",
+      "City": "Bengaluru"
+  }
+  ```
+
+### XML Response
+- **Request**:
+  ```json
+  {
+      "city": "Bengaluru",
+      "output_format": "xml"
+  }
+  ```
+- **Response**:
+  ```xml
+  <root>
+      <Temperature>23.1</Temperature>
+      <City>Bengaluru</City>
+      <Latitude>12.9833</Latitude>
+      <Longitude>77.5833</Longitude>
+  </root>
+  ```
+
 ## Features
 - **Backend**:
   - Weather data fetched from RapidAPI’s WeatherAPI.

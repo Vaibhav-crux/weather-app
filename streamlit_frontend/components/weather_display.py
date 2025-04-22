@@ -15,15 +15,15 @@ def get_weather_icon(temp):
 
 def display_weather(weather_data):
     """Display weather data in a formatted box."""
-    weather_icon = get_weather_icon(weather_data["weather"])
+    weather_icon = get_weather_icon(weather_data["Weather"])
 
     st.markdown('<div class="weather-box">', unsafe_allow_html=True)
     
     # Weather and city
     st.markdown(
         f"""
-        <h2>{weather_icon} {weather_data['weather']}</h2>
-        <h3>{weather_data['city']}</h3>
+        <h2>{weather_icon} {weather_data['Weather']}</h2>
+        <h3>{weather_data['City']}</h3>
         """,
         unsafe_allow_html=True
     )
@@ -32,10 +32,10 @@ def display_weather(weather_data):
     col1, col2 = st.columns(2)
     with col1:
         st.markdown('<p class="metric-label">Latitude</p>', unsafe_allow_html=True)
-        st.markdown(f'<p class="metric-value">{weather_data["latitude"]}</p>', unsafe_allow_html=True)
+        st.markdown(f'<p class="metric-value">{weather_data["Latitude"]}</p>', unsafe_allow_html=True)
     with col2:
         st.markdown('<p class="metric-label">Longitude</p>', unsafe_allow_html=True)
-        st.markdown(f'<p class="metric-value">{weather_data["longitude"]}</p>', unsafe_allow_html=True)
+        st.markdown(f'<p class="metric-value">{weather_data["Longitude"]}</p>', unsafe_allow_html=True)
 
     st.markdown('</div>', unsafe_allow_html=True)
 

@@ -32,7 +32,7 @@ add_cors_middleware(app)          # Add CORS support
 # Register weather routes with prefix
 app.include_router(weather_router.router, prefix="/api/v1")
 
-@app.get("/health")
+@app.get("/")
 async def health_check():
     """Check API health status asynchronously."""
     # Log health check request
@@ -53,3 +53,6 @@ async def startup_event():
 async def shutdown_event():
     # Log application shutdown
     logger.info("Weather API shutting down")
+
+
+app = FastAPI()
